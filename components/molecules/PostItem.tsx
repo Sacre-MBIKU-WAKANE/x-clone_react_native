@@ -1,12 +1,11 @@
 import { View, Text } from "react-native";
 import PostItemLastReaction from "../atoms/PostItemLastReaction";
+import PostItemDetails from "./PostItemDetails";
 const PostItem = () => {
 	return (
 		<View>
 			<PostItemLastReaction />
-			<View>
-				<Text>Deuxième composant</Text>
-			</View>
+			<PostItemDetails />
 		</View>
 	);
 };
