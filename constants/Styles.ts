@@ -1,6 +1,11 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
+	flexRowContainer: {
+		flexDirection: "row",
+		gap: 15,
+		alignItems: "center",
+	},
 	mainContainer: {
 		paddingHorizontal: "20%",
 		backgroundColor: "#f1f1f1",
