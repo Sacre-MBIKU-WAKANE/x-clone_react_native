@@ -19,7 +19,7 @@ const index = (props: Props) => {
 		console.log({ isconnected: authUser?.isConnected });
 
 		if (authUser?.isConnected) {
-			navigation.navigate("/(tabs)");
+			navigation.navigate("/(drawer)/(tabs)");
 		}
 	}, [authUser?.isConnected]);
 

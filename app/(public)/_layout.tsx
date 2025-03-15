@@ -6,8 +6,21 @@ type Props = {};
 
 const _layout = (props: Props) => {
 	return (
-		<Stack>
-			<Stack.Screen name='index' />
+		<Stack
+			screenOptions={{
+				title: "Connexion",
+				headerShown: true,
+				headerBackground: () => (
+					<View
+						style={{
+							backgroundColor: "#1DA1F2",
+							height: 100,
+						}}
+					/>
+				),
+			}}
+		>
+			<Stack.Screen name='index' options={{}} />
 		</Stack>
 	);
 };
