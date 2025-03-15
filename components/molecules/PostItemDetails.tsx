@@ -3,15 +3,19 @@ import React from "react";
 import PostItemAvatar from "../atoms/PostItemAvatar";
 import PostItemUsername from "../atoms/PostItemUsername";
 import styles from "@/constants/Styles";
+import PostItemDescription from "../atoms/PostItemDescription";
 
-type Props = {};
+type Props = {
+	likeValue: number;
+};
 
-const PostItemDetails = (props: Props) => {
+const PostItemDetails = ({ likeValue }: Props) => {
 	return (
 		<View style={styles.flexRowContainer}>
 			<PostItemAvatar />
-			<View>
+			<View style={{ gap: 15 }}>
 				<PostItemUsername />
+				<PostItemDescription likeValue={likeValue} />
 			</View>
 		</View>
 	);

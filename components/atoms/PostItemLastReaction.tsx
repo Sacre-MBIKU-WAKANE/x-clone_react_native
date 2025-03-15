@@ -3,10 +3,14 @@ import React from "react";
 
 type Props = {};
 
-const PostItemLastReaction = (props: Props) => {
+const PostItemLastReaction = ({
+	lastUserReacted,
+}: {
+	lastUserReacted: string;
+}) => {
 	return (
 		<View>
-			<Text style={styles.textStyle}>Zack John Liked</Text>
+			<Text style={styles.textStyle}>{lastUserReacted}</Text>
 		</View>
 	);
 };
