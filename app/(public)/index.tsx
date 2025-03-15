@@ -18,7 +18,7 @@ const index = (props: Props) => {
 	useEffect(() => {
 		console.log({ isconnected: authUser?.isConnected });
 
-		if (authUser?.isConnected === true) {
+		if (authUser?.isConnected) {
 			navigation.navigate("/(tabs)");
 		}
 	}, [authUser?.isConnected]);
