@@ -11,7 +11,11 @@ export default function HomeScreen() {
 			<FlatList
 				data={tweetsStates.tweets}
 				renderItem={({ item }: any) => (
-					<PostItem key={Math.random()} lastUserReacted={item} likeValue={12} />
+					<PostItem
+						key={Math.random()}
+						lastUserReacted={item.like}
+						likeValue={12}
+					/>
 				)}
 				showsVerticalScrollIndicator={false}
 			/>
