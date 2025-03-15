@@ -1,8 +1,10 @@
 import PostItemLastReaction from "@/components/atoms/PostItemLastReaction";
 import PostItem from "@/components/molecules/PostItem";
 import styles from "@/constants/Styles";
+import useAuthUser from "@/states/authUser";
 import useTweets from "@/states/tweets";
 import { Link, useRouter } from "expo-router";
+import { useEffect } from "react";
 import {
 	View,
 	Button,
@@ -15,11 +17,20 @@ import {
 export default function HomeScreen() {
 	const tweetsStates = useTweets((state) => state);
 	const navigation = useRouter();
+	const authUser = useAuthUser((state: any) => state);
+
+	useEffect(() => {
+		console.log("Le composant est monté");
+		if (!authUser?.isConnected) {
+			navigation.navigate("/(public)");
+		}
+	}, [authUser?.isConnected]);
+
 	return (
 		<View style={styles.mainContainer}>
 			<TouchableOpacity
 				onPress={() => {
-					navigation.navigate("/(public)");
+					authUser?.logout();
 				}}
 			>
 				<Text>Se déconnecter</Text>
